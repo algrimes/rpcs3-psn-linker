@@ -1,0 +1,34 @@
+#! /usr/bin/env bash
+
+if [ $# -lt 3 ]; then
+	echo ""
+    echo "Usage: rpcs3-psn-linker [/path/to/PSN/games/directory] [/path/to/rpcs3/root/folder] [/path/to/sfo]"
+	echo ""
+	echo "example: ./rpcs3-psn-linker /media/games/ps3/digital ~/Library/Application\ Support/rpcs3/ /home/sfo/sfo"
+	echo ""
+  exit 1
+fi
+
+gamesdir=$1
+rpcs3root=$2
+sfo=$3
+
+echo "WARNING: Any game with a matching title id from the games directory you provided
+that is found in RPCS3's /dev_hdd0/game folder will be overwritten. 
+This should be ok as it implies you already have a copy of the game outside the
+emulator, but you may need to reinstall game updates that only exist on the HDD"
+	 
+read -p "Ok to proceed? (y/n) " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
+
+find $gamesdir -type d -depth 1 | while read d; do
+  gameid=$($sfo "$d/PARAM.SFO" -q title_id) || { echo "Error reading PARAM.SFO in $d"; exit 1; }
+  rm -rf "$rpcs3root/dev_hdd0/game/$gameid"
+  ln -shF "$d" "$rpcs3root/dev_hdd0/game/$gameid"
+done
+
+
