@@ -7,7 +7,7 @@ rpcs3-psn-linker [/path/to/PSN/games/directory] [/path/to/rpcs3/root/folder] [/p
 
 e.g.
 
-./rpcs3-psn-linker [/media/games/ps3/digita] [~/Library/Application\ Support/rpcs3] [/home/to/sfo]
+./rpcs3-psn-linker [/media/games/ps3/digital] [~/Library/Application\ Support/rpcs3] [/home/sfo/sfo]
 
 ```
 
