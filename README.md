@@ -14,7 +14,7 @@ e.g.
 There is an interactive prompt that warns about removing matching titleids from rpcs3s hdd, pipe `yes` to it to use it for automation. 
 
 
-####Overview
+### Overview ###
 
 One reason why RPCS3 asks you to install digital games into `/dev_hdd0/game` folder is nothing to do with the emulator itself - certain games were developed with fully-qualified-hard-coded paths to their assets that only work within a folder structure that exactly matches the PS3 filesystem. I saw this behaviour first hand when, after ignoring the quickstart guide, installed 2 PSN games from my collection. One worked, another didn't. The one that didnt was spitting errors into the console:
 
@@ -29,7 +29,7 @@ Combining these two approaches, you can now have a single hosted set of digital 
 You could combine this script with `fswatch` and `launchctl` or `supervisord` to automatically add games to your RPCS3 library when they are added to your games folder.
 
 
-####Dependencies
+### Dependencies ###
 
 [SFO](https://github.com/hippie68/sfo/releases)
 
@@ -37,7 +37,7 @@ Required to extract the title_id from the PARAM.SFO so the correct folder struct
 
 Pass the full path to where the executable is as the third argument.
 
-####Required Directory structure
+### Required Directory structure ###
 
 It assumes all games are installed at the same level underneath the directory you provide. Inside each folder, its expected to take the layout of a PS3 digital game. At minimum there will be a `USRDIR` directoru and a `PARAM.SFO` file.
 
