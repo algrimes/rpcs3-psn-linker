@@ -3,11 +3,11 @@ Keep your PS3 game library intact, compact, and hosted where you like. This tiny
 ```
 Usage:
 
-rpcs3-psn-linker [/path/to/PSN/games/directory] [/path/to/rpcs3/root/folder] [/path/to/sfo]`
+rpcs3-psn-linker [/path/to/PSN/games/directory] [/path/to/rpcs3/root/folder] [/path/to/sfo]
 
 e.g.
 
-./rpcs3-psn-linker [/media/games/ps3/digita] [~/Library/Application\ Support/rpcs3] [/home/to/sfo]`
+./rpcs3-psn-linker [/media/games/ps3/digita] [~/Library/Application\ Support/rpcs3] [/home/to/sfo]
 
 ```
 
