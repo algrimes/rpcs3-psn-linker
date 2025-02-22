@@ -7,7 +7,7 @@ rpcs3-psn-linker [/path/to/PSN/games/directory] [/path/to/rpcs3/root/folder] [/p
 
 e.g.
 
-./rpcs3-psn-linker [/media/games/ps3/digital] [~/Library/Application\ Support/rpcs3] [/home/sfo/sfo]
+./rpcs3-psn-linker /media/games/ps3/digital ~/Library/Application\ Support/rpcs3 /home/sfo/sfo
 
 ```
 
@@ -20,7 +20,7 @@ One reason why RPCS3 asks you to install digital games into `/dev_hdd0/game` fol
 
 `E sys_fs: 'sys_fs_open' failed with 0x80010006 : CELL_ENOENT, “/dev_hdd0/game/NP blah blah`
 
-This project gets round this limitation and creates symlinks within RPCS3's internal hdd to point to your already-hosted collection of folder-format PSN games, making these hard-coded games believe they are running in a PS3 fs, and avoiding the need to make copies of them in RPCS3's /dev_hdd0/game folder (and having to rename folders to the title id) or have additional package installation steps.
+This project gets round this limitation and creates symlinks within RPCS3's internal hdd to point to your already-hosted collection of folder-format PSN games, making these hard-coded games believe they are running in a PS3 fs, and avoiding the need to make copies of them in RPCS3's `/dev_hdd0/game` folder (and having to rename folders to the title id) or have additional package installation steps.
 
 The power of this is when you already have a collection of PSN folder games that you are hosting somewhere e.g. you are already serving digital games in folder format to your PS3 using ps3netsrv's GAMEI folder.
 
@@ -39,7 +39,7 @@ Pass the full path to where the executable is as the third argument.
 
 ### Required Directory structure ###
 
-It assumes all games are installed at the same level underneath the directory you provide. Inside each folder, its expected to take the layout of a PS3 digital game. At minimum there will be a `USRDIR` directoru and a `PARAM.SFO` file.
+It assumes all games are installed at the same level underneath the directory you provide. Inside each folder, its expected to take the layout of a PS3 digital game. At minimum there will be a `USRDIR` directory and a `PARAM.SFO` file.
 
 ```
 /path/to/PSN/games/directory (the first argument you provide)
